@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="wordcase_dictionary_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="wordcase_dictionary_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrX-im-bZw">
+                                <rect key="frame" x="190" y="799" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="transScreenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gnj-FM-xVR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -45,11 +53,72 @@
                     <connections>
                         <outlet property="tableView" destination="jsz-nM-gdB" id="nUz-ep-vGa"/>
                         <segue destination="Mob-Dy-gXE" kind="show" identifier="transAdd" id="6Mb-HB-HdW"/>
+                        <segue destination="Rjy-Ae-b3T" kind="show" identifier="transScreen" id="SKU-dc-R8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336.23188405797106" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-336" y="138"/>
+        </scene>
+        <!--Screen View Controller-->
+        <scene sceneID="sJf-Jr-K6M">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Rjy-Ae-b3T" customClass="ScreenViewController" customModule="wordcase_dictionary_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HvI-nI-8oD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OP-Yz-GBs">
+                                <rect key="frame" x="44" y="74" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Rjy-Ae-b3T" eventType="touchUpInside" id="EIo-Ri-1EC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Content]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rL-0v-mlV">
+                                <rect key="frame" x="20" y="153" width="374" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExV-cy-uK4">
+                                <rect key="frame" x="308" y="702" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="Rjy-Ae-b3T" eventType="touchUpInside" id="2Cg-QU-kDX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCd-J6-LdX">
+                                <rect key="frame" x="58" y="702" width="59" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="previousButton:" destination="Rjy-Ae-b3T" eventType="touchUpInside" id="Abb-H9-dFD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Referrence]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XQ-I2-yyF">
+                                <rect key="frame" x="20" y="488" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="N0f-QT-sAt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GyV-5N-ziM"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="6rL-0v-mlV" id="zoF-57-7fa"/>
+                        <outlet property="referenceLabel" destination="7XQ-I2-yyF" id="Vod-bT-KMl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTW-KE-yt7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-336.23188405797106" y="814.95535714285711"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="vi8-uF-Fvk">
@@ -73,8 +142,8 @@
                                     <action selector="addButton:" destination="Mob-Dy-gXE" eventType="touchUpInside" id="xp1-HC-7g9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Content]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBZ-Fx-uFt">
-                                <rect key="frame" x="20" y="115" width="374" height="116"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Content]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBZ-Fx-uFt">
+                                <rect key="frame" x="20" y="115" width="374" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -124,8 +193,8 @@
                     <connections>
                         <outlet property="contentPreview" destination="qBZ-Fx-uFt" id="xq1-tJ-Eke"/>
                         <outlet property="contentTextField" destination="19v-fQ-P74" id="fNU-oc-LjC"/>
-                        <outlet property="referrencePreview" destination="u3N-P7-1uU" id="nIS-gj-0v7"/>
-                        <outlet property="referrenceTextField" destination="Ght-W8-LiW" id="e9H-KN-hDR"/>
+                        <outlet property="referencePreview" destination="u3N-P7-1uU" id="fl2-7F-fEd"/>
+                        <outlet property="referenceTextField" destination="Ght-W8-LiW" id="KDc-Ys-TQs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1L-Sj-mji" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

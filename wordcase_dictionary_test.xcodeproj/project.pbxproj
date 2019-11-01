@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714B8DC4236BEDFC00413538 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B8DC3236BEDFC00413538 /* ScreenViewController.swift */; };
 		71D2DD7C236A765100518880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2DD7B236A765100518880 /* AppDelegate.swift */; };
 		71D2DD7E236A765100518880 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2DD7D236A765100518880 /* SceneDelegate.swift */; };
 		71D2DD80236A765100518880 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2DD7F236A765100518880 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		714B8DC3236BEDFC00413538 /* ScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
 		71D2DD78236A765100518880 /* wordcase_dictionary_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wordcase_dictionary_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D2DD7B236A765100518880 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71D2DD7D236A765100518880 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				71D2DD7D236A765100518880 /* SceneDelegate.swift */,
 				71D2DD7F236A765100518880 /* ViewController.swift */,
 				71D2DD8F236A77EC00518880 /* AddViewController.swift */,
+				714B8DC3236BEDFC00413538 /* ScreenViewController.swift */,
 				71D2DD81236A765100518880 /* Main.storyboard */,
 				71D2DD84236A765200518880 /* Assets.xcassets */,
 				71D2DD86236A765200518880 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				71D2DD80236A765100518880 /* ViewController.swift in Sources */,
 				71D2DD7C236A765100518880 /* AppDelegate.swift in Sources */,
+				714B8DC4236BEDFC00413538 /* ScreenViewController.swift in Sources */,
 				71D2DD90236A77EC00518880 /* AddViewController.swift in Sources */,
 				71D2DD7E236A765100518880 /* SceneDelegate.swift in Sources */,
 			);

@@ -9,65 +9,64 @@
 import UIKit
 
 protocol CatchProtocol {
-    func catchData(wordDictionary: Dictionary<String, String>)
+    func catchData(contentDictionary: Dictionary<Int, String>, referenceDictionary: Dictionary<Int, String>)
 }
 
-var wordDictionary: [String: String] = [:]
+var contentDictionary: [Int:String] = [:]
+var referenceDictionary: [Int:String] = [:]
 
 
 class AddViewController: UIViewController, UITextFieldDelegate {
     
     var content = String()
-    var referrence = String()
+    var reference = String()
+    var contentCount = 0
+    var referenceCount = 0
     var delegate: CatchProtocol?
 
     @IBOutlet weak var contentPreview: UILabel!
     
-    @IBOutlet weak var referrencePreview: UILabel!
-    
-    
+    @IBOutlet weak var referencePreview: UILabel!
     
     @IBOutlet weak var contentTextField: UITextField!
     
-    
-    @IBOutlet weak var referrenceTextField: UITextField!
+    @IBOutlet weak var referenceTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         contentTextField.delegate = self
-        referrenceTextField.delegate = self
+        referenceTextField.delegate = self
         
     }
     
     
     @IBAction func addButton(_ sender: Any) {
         content = contentTextField.text!
-        referrence = referrenceTextField.text!
-        wordDictionary.updateValue(referrence, forKey: content)
+        reference = referenceTextField.text!
+        contentCount += 1
+        referenceCount += 1
+        contentDictionary.updateValue(content, forKey: contentCount)
+        referenceDictionary.updateValue(reference, forKey: referenceCount)
         contentTextField.text = ""
-        referrenceTextField.text = ""
+        referenceTextField.text = ""
     }
     
     @IBAction func addPreviewButton(_ sender: Any) {
         content = contentTextField.text!
-        referrence = referrenceTextField.text!
+        reference = referenceTextField.text!
         contentPreview.text = content
-        referrencePreview.text = "──  \(referrence)"
-        
-//        contentPreview.text = Array(wordDictionary.keys).last
-//        referrencePreview.text = wordDictionary[content]
-               
+        referencePreview.text = "──  \(reference)"
     }
     
     @IBAction func backButton(_ sender: Any) {
-        delegate?.catchData(wordDictionary: wordDictionary)
+        delegate?.catchData(contentDictionary: contentDictionary, referenceDictionary: referenceDictionary)
         dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         contentTextField.resignFirstResponder()
-        referrenceTextField.resignFirstResponder()
+        referenceTextField.resignFirstResponder()
         return true
     }
     
