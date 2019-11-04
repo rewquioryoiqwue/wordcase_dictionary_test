@@ -22,6 +22,9 @@ class ScreenViewController: UIViewController {
         super.viewDidLoad()
         contentLabel.text = screenContentDictionary[i]
         referenceLabel.text = "──  \(screenReferenceDictionary[i]!)"
+        
+        contentLabel.adjustsFontSizeToFitWidth = true
+        contentLabel.minimumScaleFactor = 0.8
     }
     
     
